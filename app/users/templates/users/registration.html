@@ -1,0 +1,14 @@
+{% extends 'main/index.html' %}
+{% load django_bootstrap5 %}
+{% block header %}
+<!-- Modal -->
+<div class="d-flex justify-content-center align-items-center">
+    <form method="POST" action="{% url 'users:registration' %}">
+        {% csrf_token %}
+        {% bootstrap_form form layout='floating' %}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}
+{% block content %}
+{% endblock %}
